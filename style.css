@@ -15,6 +15,9 @@
     position: relative;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
 }
 
@@ -40,7 +43,7 @@ nav img{
     position: relative;
     width: 60%;
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
     align-items: center;
 
 }
@@ -85,15 +88,16 @@ nav img{
     width: 100%;
 }
 
+
 #hero-sec-content{
-    height: 80%;
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: center;
     position: relative;
     align-items: center;
-    padding: 2vw;
+    padding: 6vw 2vw;
 }
 
 #hero-sec-content h1 {
@@ -121,8 +125,22 @@ nav img{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+#working-count{
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+}
 
-#hero-sec-content #right-elem{
+#working-count img{
+    width: 100px;
+}
+
+#working-count span{
+    font-size: 1.2rem;
+    color: #1137A7;
+}
+
+#right-elem{
     width: 25vw;
     height: 25vw;
     background-color: #2F55AA;
@@ -130,12 +148,18 @@ nav img{
     position: absolute;
     right: -27%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) skew(50px);
     z-index: 99;
     filter: blur(20px);
+    filter: blur(20px);
+    animation: move2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
 }
 
-#hero-sec-content #left-elem{
+#left-elem{
     width: 25vw;
     height: 25vw;
     background-color: #2F55AA;
@@ -143,11 +167,152 @@ nav img{
     position: absolute;
     left: -0;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) skew(50px);
     z-index: 99;
     filter: blur(20px);
+    animation: move;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
 }
 
+#hero-sec-btm{
+    width: 50vw;
+    border-radius: 10px;
+    height: 15vh;
+    display: flex;
+    padding: 2vw;
+    align-items: center;
+    background: linear-gradient(to right, #1137A7, #375BC8);
+}
+
+#hero-sec-btm #btm-right{
+    width: 60%;
+    border-right: 2px solid rgba(255, 255, 255, 0.454);
+    margin-right: 10px;
+}
+
+#hero-sec-btm #btm-right > p {
+    width: 98%;
+    background-color: white;
+    color: #1137A7;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#hero-sec-btm #btm-right > p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+    z-index: 0;
+}
+
+#hero-sec-btm #btm-right > p:hover::after {
+    width: 200%;
+    height: 500%;
+}
+
+#hero-sec-btm #btm-right > p:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+#hero-sec-btm #btm-left{
+}
+
+#hero-sec-btm #btm-left > button {
+    background: linear-gradient(135deg, #2999FF, #1c7ed6);
+    color: white;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 33px;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(41, 153, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+#hero-sec-btm #btm-left > button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+#hero-sec-btm #btm-left > button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#hero-sec-btm #btm-left > button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(41, 153, 255, 0.35);
+}
+
+@keyframes move {
+    0% {
+        left: 0%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        left: 2%;
+        top: 52%;
+        transform: translate(-50%, -50%) scale(1.03);
+    }
+    100% {
+        left: 0%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes move2 {
+    0% {
+        right: -27%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        right: -25%;
+        top: 52%;
+        transform: translate(-50%, -50%) scale(1.03);
+    }
+    100% {
+        right: -27%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
 
 /* Blobs Responsive Positioning */
 @media (max-width: 992px) {
