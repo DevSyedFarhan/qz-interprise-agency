@@ -288,6 +288,30 @@ nav > i{
     box-shadow: 0 6px 16px rgba(41, 153, 255, 0.35);
 }
 
+#page-2{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.454);
+    background-image: url(./Assets/Images/p2-sec-bg.png);
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1024px) {
     nav button{
         font-size: .8rem;
