@@ -10,6 +10,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: Poppins;
+    
 }  
 
 #hero-section{  
@@ -192,6 +193,7 @@ nav > i{
     padding: 2vw;
     flex-wrap: wrap ;
     align-items: center;
+    justify-content: center;
     position: relative;
     background: linear-gradient(to right, #164E66, #508FB3);
 }
