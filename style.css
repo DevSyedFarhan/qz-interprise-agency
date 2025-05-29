@@ -58,6 +58,7 @@ nav > i{
     color: white;
     border-radius: 5px;
     font-size: 1.4rem;
+    padding-right: 1vw;
     background-color: #508FB3;
     display: none;
 }
