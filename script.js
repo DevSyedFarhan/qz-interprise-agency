@@ -31,15 +31,5 @@ ScrollTrigger.refresh();
 
 }
 
-locomotive();
+// locomotive();
 
-window.addEventListener("load", () => {
-  // Timeline for smooth sequencing
-  const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: .3 } });
-
-  tl.from("#hero-sec-content h1 .innovative", { y: 10, opacity: 0 })
-    .from("#hero-sec-content h1 .solutions", { y: 10, opacity: 0 }, "-=0.1")
-    .from("#hero-sec-content h2", { y: 10, opacity: 0 }, "-=0.1")
-    .from("#working-count", { y: 10, opacity: 0 }, "-=0.1")
-    .from("#hero-sec-btm", { y: 10 , opacity: 0 }, "-=0.5")
-});
