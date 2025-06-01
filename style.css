@@ -35,7 +35,7 @@ nav{
     justify-content: center;
     gap: 1vw;
     width: 100vw;
-    height: 8vh;
+    height: 5vh;
 }
 
 #logo{
@@ -343,7 +343,7 @@ nav i{
     }
 }
 
-@media (max-width: 726px) {
+@media (max-width: 768px) {
     #links{
         justify-content: end;
     }
